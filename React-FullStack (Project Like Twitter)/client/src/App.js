@@ -12,6 +12,8 @@ import Post from "./pages/Post";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Registration from "./pages/Registration";
+import Profile from "./pages/Profile";
+
 import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -63,10 +65,10 @@ function App() {
                   <Link to="/login"> Login</Link>
                   <Link to="/registration"> Registration</Link>
                 </>
-              ): (
+              ) : (
                 <>
-                <Link to="/"> Home Page</Link>
-                <Link to="/createpost"> Create A Post</Link>
+                  <Link to="/"> Home Page</Link>
+                  <Link to="/createpost"> Create A Post</Link>
                 </>
               )}
             </div>
@@ -81,6 +83,7 @@ function App() {
             <Route path="/post/:id" exact Component={Post} />
             <Route path="/registration" exact Component={Registration} />
             <Route path="/login" exact Component={Login} />
+            <Route path="/profile/:id" exact Component={Profile} />
             <Route path="*" exact Component={PageNotFound} />
           </Routes>
         </Router>

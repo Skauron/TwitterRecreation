@@ -71,6 +71,9 @@ body {
 .unlikeBttn {
   color: white;
 }
+.DeleteBttn {
+  margin-right: 30px;
+}
 
 .buttons label {
   margin-right: 20px;

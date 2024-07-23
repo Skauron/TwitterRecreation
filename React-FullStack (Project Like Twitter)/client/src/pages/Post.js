@@ -84,11 +84,13 @@ function Post() {
           <div className="footer">
             {postObject.username}
             {authState.username === postObject.username && (
-              <DeleteIcon
-                onClick={() => {
-                  deletePost(postObject.id);
-                }}
-              ></DeleteIcon>
+              <div className="buttons">
+                <DeleteIcon className="DeleteBttn"
+                  onClick={() => {
+                    deletePost(postObject.id);
+                  }}
+                ></DeleteIcon>
+              </div>
             )}
           </div>
         </div>
