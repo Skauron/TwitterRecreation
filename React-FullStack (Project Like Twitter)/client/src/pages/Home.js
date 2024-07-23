@@ -88,7 +88,7 @@ function Home() {
             </div>
             <div className="footer">
               <div className="username">
-                <Link to={`/profile/${value.UserId}`}>{value.username}</Link>
+                <Link className="usernameLink" to={`/profile/${value.UserId}`}>{value.username}</Link>
               </div>
               <div className="buttons">
                 <ThumbUpAltIcon

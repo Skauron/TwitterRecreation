@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import EditIcon from '@mui/icons-material/Edit';
+import { AuthContext } from "../helpers/AuthContext";
 
 function Profile() {
   let { id } = useParams();
   const [username, setUsername] = useState("");
   const [listOfPosts, setListOfPosts] = useState([]);
+  const { authState } = useContext(AuthContext);
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -21,6 +24,7 @@ function Profile() {
     <div className="profilePageContainer">
       <div className="basicInfo">
         <h1>Username: {username}</h1>
+        {authState.username === username && (<EditIcon className="EditBttn" onClick={() => {navigate(`/changepassword`);} }></EditIcon>)}
       </div>
       <div className="listOfPosts">
         {listOfPosts.map((value, key) => {
